@@ -10,7 +10,6 @@ function extForPlatform (platform) {
   }[platform]
 }
 
-
 function resolveCommit (arch, platform, version) {
   const ext = extForPlatform(platform)
   const resolvedOs = {
@@ -24,8 +23,8 @@ function resolveCommit (arch, platform, version) {
     arm64: 'aarch64',
     ppc64: 'powerpc64',
     riscv64: 'riscv64',
-    x64: 'x86_64',
-  } [arch]
+    x64: 'x86_64'
+  }[arch]
 
   const downloadUrl = `https://ziglang.org/builds/zig-${resolvedOs}-${resolvedArch}-${version}.${ext}`
   const variantName = `zig-${resolvedOs}-${resolvedArch}-${version}`
@@ -58,8 +57,8 @@ async function resolveVersion (arch, platform, version) {
     arm64: 'aarch64',
     ppc64: 'powerpc64',
     riscv64: 'riscv64',
-    x64: 'x86_64',
-  } [arch]
+    x64: 'x86_64'
+  }[arch]
 
   const host = `${resolvedArch}-${resolvedOs}`
 
