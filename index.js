@@ -67,7 +67,9 @@ async function main () {
     return
   }
 
-  const zigPath = await downloadZig(os.arch(), os.platform(), version, useCache === 'true')
+  const osArch = os.arch();
+  actions.info(`os arch ${osArch}`)
+  const zigPath = await downloadZig(osArch, os.platform(), version, useCache === 'true')
 
   // Add the `zig` binary to the $PATH
   actions.addPath(zigPath)
